@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook – Log In or Sign Up</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR (shown after login) -->
+  <nav class="navbar hidden" id="navbar">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="white" height="40" width="40"><path d="M20.181 35.87C29.094 34.791 36 27.202 36 18c0-9.941-8.059-18-18-18S0 8.059 0 18c0 8.442 5.811 15.526 13.652 17.471L14 34h5.5l.681 1.87z"/><path fill="#1877f2" d="M13.651 35.471v-11.97H9.936V18h3.715v-2.37c0-6.127 2.772-8.964 8.784-8.964 1.138 0 3.103.223 3.91.446v4.983c-.425-.043-1.167-.065-2.081-.065-2.952 0-4.09 1.116-4.09 4.025V18h5.883l-1.008 5.501h-4.875v12.37a18.183 18.183 0 01-6.523-.4z"/></svg>
+        <span>facebook</span>
+      </a>
+      <div class="nav-search">
+        <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16"><path d="M10.5 0a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zM.5 15a.5.5 0 010-1h2.586L.793 11.707a1 1 0 011.414-1.414L5.5 13.586V11a.5.5 0 011 0v4.5a.5.5 0 01-.5.5H.5z"/></svg>
+        <input type="text" placeholder="Search Facebook" id="navSearch" />
+      </div>
+    </div>
+    <div class="nav-center">
+      <a href="#" class="nav-icon active" title="Home">
+        <svg viewBox="0 0 28 28" fill="currentColor" height="24" width="24"><path d="M14.081 3.293a1.5 1.5 0 00-2.162 0L2.17 12.95a.5.5 0 00.349.854H5v10a2 2 0 002 2h4v-7h6v7h4a2 2 0 002-2v-10h2.481a.5.5 0 00.35-.854L14.08 3.293z"/></svg>
+      </a>
+      <a href="#" class="nav-icon" title="Watch">
+        <svg viewBox="0 0 28 28" fill="currentColor" height="24" width="24"><path d="M6 4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H6zm5.5 5.25a.75.75 0 011.13-.65l7 4a.75.75 0 010 1.3l-7 4a.75.75 0 01-1.13-.65v-8z"/></svg>
+      </a>
+      <a href="#" class="nav-icon" title="Marketplace">
+        <svg viewBox="0 0 28 28" fill="currentColor" height="24" width="24"><path d="M26 8H22.424l-3.521-4.402A2 2 0 0017.324 3H10.68a2 2 0 00-1.58.598L5.576 8H2a1 1 0 000 2h1v12a3 3 0 003 3h16a3 3 0 003-3V10h1a1 1 0 000-2zM10.68 5h6.64l2.4 3H8.28l2.4-3zM5 10h18v12a1 1 0 01-1 1H6a1 1 0 01-1-1V10z"/></svg>
+      </a>
+      <a href="#" class="nav-icon" title="Groups">
+        <svg viewBox="0 0 28 28" fill="currentColor" height="24" width="24"><path d="M14 13a4 4 0 100-8 4 4 0 000 8zm-9 2a3 3 0 100-6 3 3 0 000 6zm18 0a3 3 0 100-6 3 3 0 000 6zM5 22a9 9 0 0118 0H5z"/></svg>
+      </a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-avatar" id="navAvatar">
+        <span id="navUserInitial">J</span>
+      </button>
+      <button class="nav-action-btn" title="Messenger">💬</button>
+      <button class="nav-action-btn" title="Notifications">🔔</button>
+      <button class="nav-action-btn" id="logoutBtn" title="Logout">⚙️</button>
+    </div>
+  </nav>
+
+  <!-- LOGIN PAGE -->
+  <div class="login-page" id="loginPage">
+    <div class="login-hero">
+      <div class="login-hero-inner">
+        <div class="hero-logo">
+          <svg viewBox="0 0 167 167" fill="#1877f2" height="60" width="60"><path d="M0 0h167v167H0z" fill="none"/><path d="M138.8 104.4l5.2-33.8h-32.5V48.8c0-9.2 4.5-18.2 19.1-18.2H146V2.4S133 0 120.7 0c-26.8 0-44.3 16.2-44.3 45.6v25H48v33.8h28.4V167h35V104.4h27.4z"/></svg>
+          <span>facebook</span>
+        </div>
+        <p class="hero-tagline">Connect with friends and the world around you on Facebook.</p>
+      </div>
+    </div>
+
+    <div class="login-form-container">
+      <form class="login-form" id="loginForm" novalidate>
+        <div class="input-group">
+          <input
+            type="text"
+            id="emailInput"
+            placeholder="Email address or phone number"
+            autocomplete="username"
+          />
+          <span class="error-msg" id="emailError"></span>
+        </div>
+        <div class="input-group">
+          <div class="password-wrapper">
+            <input
+              type="password"
+              id="passwordInput"
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+            <button type="button" class="toggle-pw" id="togglePw">Show</button>
+          </div>
+          <span class="error-msg" id="passwordError"></span>
+        </div>
+        <button type="submit" class="btn-login" id="loginBtn">
+          <span class="btn-text">Log in</span>
+          <span class="btn-spinner hidden" id="loginSpinner"></span>
+        </button>
+        <a href="#" class="forgot-password">Forgotten password?</a>
+        <div class="divider"><span>or</span></div>
+        <button type="button" class="btn-create" id="openSignup">Create new account</button>
+      </form>
+      <p class="page-cta"><strong>Create a Page</strong> for a celebrity, brand or business.</p>
+    </div>
+  </div>
+
+  <!-- HOME FEED (shown after login) -->
+  <div class="home-feed hidden" id="homeFeed">
+    <div class="feed-layout">
+
+      <!-- Left Sidebar -->
+      <aside class="sidebar-left">
+        <a href="#" class="sidebar-user" id="sidebarUser">
+          <div class="sidebar-avatar" id="sidebarAvatar">J</div>
+          <span id="sidebarName">John Doe</span>
+        </a>
+        <a href="#" class="sidebar-link">👥 Friends</a>
+        <a href="#" class="sidebar-link">👥 Groups</a>
+        <a href="#" class="sidebar-link">🎬 Watch</a>
+        <a href="#" class="sidebar-link">📅 Events</a>
+        <a href="#" class="sidebar-link">🕒 Memories</a>
+        <a href="#" class="sidebar-link">🔖 Saved</a>
+        <a href="#" class="sidebar-link">📰 News Feed</a>
+        <div class="sidebar-section-title">Your shortcuts</div>
+        <a href="#" class="sidebar-link">🌍 Public Group</a>
+        <a href="#" class="sidebar-link">🎮 Gaming</a>
+      </aside>
+
+      <!-- Main Feed -->
+      <main class="feed-main">
+        <!-- Create Post -->
+        <div class="create-post card">
+          <div class="create-post-top">
+            <div class="create-avatar" id="createAvatar">J</div>
+            <button class="create-input-btn" id="openPostModal">What's on your mind?</button>
+          </div>
+          <hr class="card-divider" />
+          <div class="create-post-actions">
+            <button class="create-action">🎥 Live video</button>
+            <button class="create-action">📷 Photo/video</button>
+            <button class="create-action">😊 Feeling/activity</button>
+          </div>
+        </div>
+
+        <!-- Posts -->
+        <div id="postsContainer"></div>
+      </main>
+
+      <!-- Right Sidebar -->
+      <aside class="sidebar-right">
+        <div class="sidebar-section-title">Contacts</div>
+        <div class="contact-list" id="contactList"></div>
+        <div class="sidebar-section-title" style="margin-top:16px">Birthdays</div>
+        <div class="birthday-item">🎂 <span>2 friends have birthdays today</span></div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal-overlay hidden" id="signupModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Create a new account</h2>
+        <p>It's quick and easy.</p>
+        <button class="modal-close" id="closeSignup">✕</button>
+      </div>
+      <form class="modal-form" id="signupForm" novalidate>
+        <div class="modal-row">
+          <input type="text" id="firstName" placeholder="First name" />
+          <input type="text" id="lastName" placeholder="Last name (optional)" />
+        </div>
+        <input type="text" id="signupEmail" placeholder="Mobile number or email address" />
+        <input type="password" id="signupPassword" placeholder="New password" />
+        <div class="dob-section">
+          <label>Date of birth</label>
+          <div class="dob-row">
+            <select id="dobDay"><option value="">Day</option></select>
+            <select id="dobMonth">
+              <option value="">Month</option>
+              <option>Jan</option><option>Feb</option><option>Mar</option>
+              <option>Apr</option><option>May</option><option>Jun</option>
+              <option>Jul</option><option>Aug</option><option>Sep</option>
+              <option>Oct</option><option>Nov</option><option>Dec</option>
+            </select>
+            <select id="dobYear"><option value="">Year</option></select>
+          </div>
+        </div>
+        <div class="gender-section">
+          <label>Gender</label>
+          <div class="gender-row">
+            <label class="gender-option"><span>Female</span><input type="radio" name="gender" value="female" /></label>
+            <label class="gender-option"><span>Male</span><input type="radio" name="gender" value="male" /></label>
+            <label class="gender-option"><span>Custom</span><input type="radio" name="gender" value="custom" /></label>
+          </div>
+        </div>
+        <p class="modal-disclaimer">By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>.</p>
+        <button type="submit" class="btn-signup">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- POST MODAL -->
+  <div class="modal-overlay hidden" id="postModal">
+    <div class="modal modal-post">
+      <div class="modal-header">
+        <h2>Create post</h2>
+        <button class="modal-close" id="closePostModal">✕</button>
+      </div>
+      <div class="modal-post-user">
+        <div class="create-avatar" id="postModalAvatar">J</div>
+        <div>
+          <strong id="postModalName">John Doe</strong>
+          <div class="post-audience">🌍 Public ▾</div>
+        </div>
+      </div>
+      <textarea id="postContent" placeholder="What's on your mind?" rows="5"></textarea>
+      <div class="post-modal-actions">
+        <span>Add to your post:</span>
+        <button type="button" title="Photo">📷</button>
+        <button type="button" title="Tag">🏷️</button>
+        <button type="button" title="Feeling">😊</button>
+        <button type="button" title="Location">📍</button>
+      </div>
+      <button class="btn-post" id="submitPost">Post</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast hidden" id="toast"></div>
+
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-links">
+      <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Advertising</a> ·
+      <a href="#">Ad Choices</a> · <a href="#">Cookies</a> · <a href="#">More</a>
+    </div>
+    <p>Facebook © 2024</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
